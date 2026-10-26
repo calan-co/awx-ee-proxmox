@@ -17,4 +17,4 @@ jobs:
     with:
       python-version: "3.12"
       install-command: python -m pip install --upgrade pip && pip install -r dependencies/requirements.txt
-      check-command: python -c "import yaml; yaml.safe_load(open('execution-environment.yml'))"
+      check-command: ruby -e 'require "yaml"; YAML.load_file("execution-environment.yml")'
